@@ -1,29 +1,18 @@
-import React, { Component } from 'react'
-import characters from '../cards-data.js'
+import React from 'react'
 
-class Characters extends Component {
+const Characters = (props) => {
 
-    constructor() {
-        super()
-        this.state = {
-            characters: []
-        }
-    }
-
-    // componentDidMount() {
-    //     this.setState({
-    //         characters: characters.data.results
-    //     })
-    // }
-    render() {
-        //console.log(characters)
-        // const characterCards = this.state.map(character => <CharacterCard />)
-        return (
-            <div>
-                Character
-            </div>
-        )
-    }
+    return (
+        <div>
+            {props.characters.map(character =>
+                <li key={character.id}>
+                    <h1>{character.name}</h1>
+                    {character.description}
+                    <p>{character.thumbnail}</p>
+                    <p>{character.image}</p>
+                </li>)}
+        </div>
+    )
 }
 
 export default Characters
