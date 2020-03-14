@@ -10,11 +10,11 @@ class Characters extends Component {
         }
     }
 
-    componentDidMount() {
-        this.setState({
-            characters: characters.data.results
-        })
-    }
+    // componentDidMount() {
+    //     this.setState({
+    //         characters: characters.data.results
+    //     })
+    // }
     render() {
         //console.log(characters)
         // const characterCards = this.state.map(character => <CharacterCard />)
