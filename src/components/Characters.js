@@ -16,7 +16,7 @@ class Characters extends Component {
         })
     }
     render() {
-        console.log(characters)
+        //console.log(characters)
         // const characterCards = this.state.map(character => <CharacterCard />)
         return (
             <div>
