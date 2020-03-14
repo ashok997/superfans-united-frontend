@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Characters from './components/Characters'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// const MARVEL_API_KEY = "ee02c6187f39e0e74f486af6be409b19";
+// const URL = 'https://gateway.marvel.com:443/v1/public/characters?limit=20&' + `apikey=${MARVEL_API_KEY}`;
+
+class App extends React.Component {
+
+  // componentDidMount() {
+  //   fetch(URL)
+  //     .then(response => response.json())
+  //     .then(data => console.log(data))
+  // }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/api/v1/characters', {
+      method: 'GET'
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+  }
+
+
+
+  render() {
+    return (
+      <div className="App">
+        <Characters />
+      </div>
+    );
+
+  }
+
 }
 
 export default App;
