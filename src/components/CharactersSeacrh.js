@@ -1,32 +1,35 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
+// import { fetchCharactersFromApi } from '../actions/fetchCharactersFromApi'
 
-class CharactersSearch extends Component {
+// class CharactersSearch extends Component {
 
-    state = {
-        nameStartingWith: ''
-    }
+//     state = {
+//         nameStartingWith: ''
+//     }
 
-    handleChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
+//     handleChange = (event) => {
+//         this.setState({
+//             [event.target.name]: event.target.value
+//         })
+//     }
 
-    handleSubmit = () => {
+//     handleSubmit = (event) => {
+//         event.preventDefault()
+//         fetchCharactersFromApi()
 
+//     }
 
-    }
-    render() {
+//     render() {
 
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <p>Search Characters :</p>
-                <label>Names Starting with: </label>
-                <input type="text" placeholder="nameStartingWith" value={this.state.name} name="nameStartingWith" onChange={this.handleChange} />
-                <input type='submit'></input>
-            </form>
-        )
-    }
-}
+//         return (
+//             <form onSubmit={this.handleSubmit}>
+//                 <p>Search Characters :</p>
+//                 <label>Names Starting with: </label>
+//                 <input type="text" placeholder="nameStartingWith" value={this.state.name} name="nameStartingWith" onChange={this.handleChange} />
+//                 <input type='submit'></input>
+//             </form>
+//         )
+//     }
+// }
 
-export default CharactersSearch
+// export default CharactersSearch

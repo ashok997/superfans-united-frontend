@@ -9,11 +9,11 @@ const Characters = (props) => {
                     <h1>{character.name}</h1>
                     <p>{character.description}</p>
                     <img src={character.thumbnail} alt="thumbnail" width="100" height="150" />
-                    {character.user_characters.map(entry =>
+                    {/* {character.user_characters.map(entry =>
                         <div><p> Votes: {entry.votes}</p>
                             <p> Comments: {entry.comments} By: {entry.user_id}</p>
                         </div>
-                    )}
+                    )} */}
                 </li>)}
         </div>
     )
