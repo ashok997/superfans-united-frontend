@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { fetchCharacters } from '../actions/fetchCharacters'
 import Characters from '../components/Characters'
 import CharacterCard from '../components/CharacterCard'
+import CharactersSearch from '../components/CharactersSeacrh'
 
 class CharactersContainer extends React.Component {
 
@@ -16,6 +17,7 @@ class CharactersContainer extends React.Component {
         return (
             <div>
                 <CharacterCard />
+                <CharactersSearch />
                 <Characters characters={this.props.characters} />
             </div>
 
