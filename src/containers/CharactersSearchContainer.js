@@ -43,5 +43,4 @@ class CharactersSearchContainer extends React.Component {
 }
 
 
-
 export default CharactersSearchContainer

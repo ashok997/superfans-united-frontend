@@ -1,21 +1,12 @@
 import React from 'react'
+import CharacterCard from './CharacterCard'
 
 const Characters = (props) => {
-
+    const characterCards = props.characters.map(character =>
+        <CharacterCard character={character} />)
     return (
         <div>
-            {props.characters.map(character =>
-
-                <li key={character.id}>
-                    <h1>{character.name}</h1>
-                    <p>{character.description}</p>
-                    <img src={`${character.thumbnail.path}.jpg`} alt="thumbnail" width="175" height="175" />
-                    {character.user_characters && character.user_characters.map(entry =>
-                        <div><p> Votes: {entry.votes}</p>
-                            <p> Comments: {entry.comments} By:</p>
-                        </div>
-                    )}
-                </li>)}
+            {characterCards}
         </div>
     )
 }
