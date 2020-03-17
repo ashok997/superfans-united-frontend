@@ -1,23 +1,26 @@
 import React from 'react'
-import { connect } from 'react-redux'
-
 import { fetchCharactersFromApi } from '../actions/fetchCharactersFromApi'
 import Characters from '../components/Characters'
 
 class CharactersSearchContainer extends React.Component {
 
     state = {
-        key: ''
+        results: [],
+        searchKey: ""
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.fetchCharactersFromApi(this.state.key);
+        fetchCharactersFromApi(this.state.searchKey)
+            .then(rawData => this.setState({
+                results: rawData.data.results
+            }))
+
     }
 
     handleChange = (event) => {
         this.setState({
-            key: event.target.value
+            searchKey: event.target.value
         })
     }
 
@@ -28,10 +31,10 @@ class CharactersSearchContainer extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <p>Search Characters :</p>
                     <label>Names Starting with: </label>
-                    <input type="text" name="nameStartingWith" value={this.state.key} onChange={this.handleChange} />
+                    <input type="text" name="nameStartingWith" value={this.state.searchKey} onChange={this.handleChange} />
                     <input type='submit'></input>
                 </form>
-                <Characters characters={this.props.characters} />
+                <Characters characters={this.state.results} />
 
             </div>
 
@@ -39,10 +42,6 @@ class CharactersSearchContainer extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        characters: state.characters
-    }
-}
 
-export default connect(mapStateToProps, { fetchCharactersFromApi })(CharactersSearchContainer)
+
+export default CharactersSearchContainer
