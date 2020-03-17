@@ -12,7 +12,6 @@ class CharactersSearchContainer extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        let nameStartsWith = this.state.key;
         this.props.fetchCharactersFromApi(this.state.key);
     }
 
@@ -33,6 +32,7 @@ class CharactersSearchContainer extends React.Component {
                     <input type='submit'></input>
                 </form>
                 <Characters characters={this.props.characters} />
+
             </div>
 
         )
