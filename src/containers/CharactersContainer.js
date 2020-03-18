@@ -1,9 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
 import { fetchCharacters } from '../actions/fetchCharacters'
 import Characters from '../components/Characters'
-import CharacterCard from '../components/CharacterCard'
 
 class CharactersContainer extends React.Component {
 
