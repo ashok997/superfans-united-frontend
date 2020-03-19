@@ -1,21 +1,24 @@
 import React from 'react'
 
-const CharacterCard = ({ character }) => {
+const CharacterCard = ({ character, upVote }) => {
 
     return (
-        <div>
-            <li key={character.id}>
+        <div >
+            <li>
                 <p>{character.name}</p>
                 <p>{character.description}</p>
                 <img src={`${character.thumbnail.path}.jpg`} alt="thumbnail" width="175" height="175" />
                 <br />
                 {character.user_characters && character.user_characters.map(entry =>
-                    <div><p> Votes: {entry.votes}</p>
+                    <div>
+                        <p> Votes: {entry.votes}</p>
                         <p> Comments: {entry.comments} By: {entry.user.name}</p>
                     </div>
                 )}
-                <button onClick={UpVote}>Upvote</button>
-                <button onClick={DownVote}>Downvote</button>
+                <button
+                    className={character.name}
+                    onClick={() => upVote(character)}>Upvote</button>
+                {/* <button onClick={() => DownVote(character.id)}>Downvote</button> */}
                 <br />
                 {/* <form>
                     <input type="text"
@@ -32,15 +35,3 @@ const CharacterCard = ({ character }) => {
 
 export default CharacterCard
 
-function DownVote(event) {
-    // console.log(`${character.id}`)
-    debugger
-}
-
-function UpVote(event) {
-    console.log('upvote')
-}
-
-function handleOnChange() {
-
-}

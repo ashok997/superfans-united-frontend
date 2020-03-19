@@ -1,7 +1,8 @@
 import React from 'react';
+
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import CharactersContainer from './containers/CharactersContainer'
 import CharactersSearchContainer from './containers/CharactersSearchContainer'
-import CharacterCard from './components/CharacterCard'
 
 
 class App extends React.Component {
@@ -10,10 +11,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <CharactersSearchContainer />
-        <CharactersContainer />
-      </div>
+      <Router>
+        <Route path="/search" component={CharactersSearchContainer} />
+        <Route path="/characters" component={CharactersContainer} />
+      </Router>
     );
 
   }
