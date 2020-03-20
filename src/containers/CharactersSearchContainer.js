@@ -2,6 +2,7 @@ import React from 'react'
 import { fetchCharactersFromApi } from '../actions/fetchCharactersFromApi'
 import Characters from '../components/Characters'
 
+
 class CharactersSearchContainer extends React.Component {
 
     state = {

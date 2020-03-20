@@ -19,18 +19,28 @@ const CharacterCard = ({ character, upVote, addComment }) => {
                         <p> Comments: {entry.comments} By: {entry.user.name}</p>
                     </div>
                 )}
-                <button
-                    className="upVote-button"
-                    onClick={() => upVote(character)}>Upvote</button>
-                {/* <button onClick={() => DownVote(character.id)}>Downvote</button> */}
-                <br />
-                <form onSubmit={(comment) => addComment(character, comment)}>
-                    <input type="text"
-                        name='comment'
-                        placeholder='comment'
-                    />
-                    <button type='submit' value="Submit">Comment</button>
-                </form>
+                {character.user_characters ?
+                    (
+                        <>
+                            <button
+                                className="upVote-button"
+                                onClick={() => upVote(character, "upvote")}>Upvote</button>
+                            <button
+                                className="upVote-button"
+                                onClick={() => upVote(character, "downvote")}>Downvote</button>
+                            <br />
+                            <form onSubmit={(comment) => addComment(character, comment)}>
+                                <input type="text"
+                                    name='comment'
+                                    placeholder='comment'
+                                />
+                                <button type='submit' value="Submit">Comment</button>
+                            </form>
+                        </>
+                    )
+                    :
+                    <button>Save</button>
+                }
             </li>
 
         </div>
