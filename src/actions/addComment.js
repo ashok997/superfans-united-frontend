@@ -1,4 +1,4 @@
-export function addUpVote(character, details) {
+export function addComment(character, details) {
     return (dispatch) => {
         fetch('http://localhost:3000/api/v1/user_characters', {
             headers: {
@@ -10,4 +10,3 @@ export function addUpVote(character, details) {
     }
 
 }
-

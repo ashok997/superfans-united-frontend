@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addUpVote } from '../actions/addUpVote'
+import { addComment } from '../actions/addComment'
 import CharacterCard from './CharacterCard'
 
 
@@ -11,7 +12,7 @@ class Characters extends React.Component {
         let characterData = {
             name: character.name,
             description: character.description,
-            thumbnail: character.thumbnail.path + '.jpg',
+            thumbnail: character.thumbnail.path,
             image: character.thumbnail.path
         }
 
@@ -22,20 +23,31 @@ class Characters extends React.Component {
 
     // }
 
-    // handleOnSubmit() {
+    addComment = (character, comment) => {
 
-    // }
+        let thumbnail = character.thumbnail.path || character.thumbnail
 
-    // handleOnChange() {
+        let characterData = {
+            name: character.name,
+            description: character.description,
+            thumbnail: thumbnail,
+            image: thumbnail
+        }
 
-    // }
+        debugger;
+
+        this.props.addComment(characterData, { comments: comment.target.comment.value })
+    }
 
 
 
     render() {
 
         const characterCards = this.props.characters.map((character, index) =>
-            <CharacterCard character={character} upVote={this.upVote} key={index} />
+            <CharacterCard character={character}
+                upVote={this.upVote}
+                addComment={this.addComment}
+                key={index} />
         )
         return (
             <div>
@@ -48,4 +60,4 @@ class Characters extends React.Component {
 
 }
 
-export default connect(null, { addUpVote })(Characters)
+export default connect(null, { addUpVote, addComment })(Characters)
