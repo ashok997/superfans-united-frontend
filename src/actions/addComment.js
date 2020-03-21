@@ -10,7 +10,7 @@ export function addComment(character, details) {
         })
             .then(respose => respose.json())
             .then(character => dispatch({
-                type: "ADD_COMMENT",
+                type: "ADD_COMMENT_OR_VOTE",
                 payload: character
             }))
     }
