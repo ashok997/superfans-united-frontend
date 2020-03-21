@@ -1,17 +1,26 @@
 import React from 'react'
-import { connect } from 'react-redux'
-
 import CharacterCard from './CharacterCard'
+import CharacterForm from './CharacterForm'
+import CharacterSave from './CharacterSave'
 
 
 const Characters = (props) => {
 
-
+    debugger;
     const characterCards = props.characters.map((character, index) =>
-        <CharacterCard character={character}
-            upVote={props.upVote || null}
-            addComment={props.addComment || null}
-            key={index} />
+        <div>
+            <CharacterCard character={character} key={index} />
+            {character.created_at ?
+                (
+                    <CharacterForm character={character}
+                        upvote={props.upVote}
+                        addComment={props.addComment} />
+                ) :
+                <CharacterSave character={character}
+                    saveCharacter={props.saveCharacter} />
+
+            }
+        </div>
     )
     return (
         <div>

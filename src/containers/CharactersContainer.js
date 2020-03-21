@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchCharacters } from '../actions/fetchCharacters'
 import { addComment } from '../actions/addComment'
 import { addUpVote } from '../actions/addUpVote'
+//import { saveCharacter } from '../actions/saveCharacter'
 import Characters from '../components/Characters'
 
 class CharactersContainer extends React.Component {
@@ -40,12 +41,14 @@ class CharactersContainer extends React.Component {
 
 
 
-
     render() {
 
         return (
             <div>
-                <Characters characters={this.props.characters} addUpVote={this.addUpVote} addComment={this.addComment} />
+                <Characters characters={this.props.characters}
+                    upVote={this.upVote}
+                    addComment={this.addComment}
+                />
             </div>
 
         )

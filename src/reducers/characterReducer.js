@@ -1,11 +1,8 @@
 export default function characterReducer(state = { characters: [] }, action) {
-    debugger;
-
-
     switch (action.type) {
         case 'FETCH_CHARACTERS':
             return { characters: action.payload }
-        case 'ADD_COMMENT':
+        case 'SAVE_CHARACTER':
             return { characters: action.payload }
         default:
             return state

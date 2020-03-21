@@ -1,6 +1,8 @@
 import React from 'react'
 import { fetchCharactersFromApi } from '../actions/fetchCharactersFromApi'
+import { connect } from 'react-redux'
 import Characters from '../components/Characters'
+import { saveCharacter } from '../actions/saveCharacter'
 
 
 class CharactersSearchContainer extends React.Component {
@@ -25,6 +27,20 @@ class CharactersSearchContainer extends React.Component {
         })
     }
 
+    saveCharacter = (character) => {
+
+        let thumbnail = character.thumbnail.path || character.thumbnail
+
+        let characterData = {
+            name: character.name,
+            description: character.description,
+            thumbnail: thumbnail,
+            image: thumbnail
+        }
+
+        this.props.saveCharacter(characterData)
+    }
+
     render() {
 
         return (
@@ -35,7 +51,8 @@ class CharactersSearchContainer extends React.Component {
                     <input type="text" name="nameStartingWith" value={this.state.searchKey} onChange={this.handleChange} />
                     <input type='submit'></input>
                 </form>
-                <Characters characters={this.state.results} />
+                <Characters characters={this.state.results}
+                    saveCharacter={this.saveCharacter} />
 
             </div>
 
@@ -44,4 +61,4 @@ class CharactersSearchContainer extends React.Component {
 }
 
 
-export default CharactersSearchContainer
+export default connect(null, { saveCharacter })(CharactersSearchContainer)

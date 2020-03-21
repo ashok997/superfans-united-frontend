@@ -1,12 +1,8 @@
 import React from 'react'
 
-const CharacterCard = ({ character, upVote, addComment }) => {
-
-
+const CharacterCard = ({ character }) => {
 
     return (
-
-
         <div >
             <li>
                 <p>{character.name}</p>
@@ -16,31 +12,11 @@ const CharacterCard = ({ character, upVote, addComment }) => {
                 {character.user_characters && character.user_characters.map(entry =>
                     <div>
                         <p> Votes: {entry.votes}</p>
-                        <p> Comments: {entry.comments} By: {entry.user.name}</p>
+                        <p> Comments: {entry.comments} </p>
+                        <p> By: {entry.user.name}</p>
                     </div>
                 )}
-                {character.user_characters ?
-                    (
-                        <>
-                            <button
-                                className="upVote-button"
-                                onClick={() => upVote(character, "upvote")}>Upvote</button>
-                            <button
-                                className="upVote-button"
-                                onClick={() => upVote(character, "downvote")}>Downvote</button>
-                            <br />
-                            <form onSubmit={(comment) => addComment(character, comment)}>
-                                <input type="text"
-                                    name='comment'
-                                    placeholder='comment'
-                                />
-                                <button type='submit' value="Submit">Comment</button>
-                            </form>
-                        </>
-                    )
-                    :
-                    <button>Save</button>
-                }
+
             </li>
 
         </div>
