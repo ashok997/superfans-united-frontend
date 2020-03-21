@@ -1,7 +1,6 @@
 import React from 'react'
 
 const CharacterCard = ({ character }) => {
-
     return (
         <div >
             <li>

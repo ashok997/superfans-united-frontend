@@ -9,7 +9,10 @@ export function addComment(character, details) {
             body: JSON.stringify({ character, details })
         })
             .then(respose => respose.json())
-            .then(character => dispatch({ type: "ADD_COMMENT", payload: character }))
+            .then(character => dispatch({
+                type: "ADD_COMMENT",
+                payload: character
+            }))
     }
 
 }

@@ -13,18 +13,13 @@ class CharactersContainer extends React.Component {
 
     upVote = (character, type) => {
         const vote = type === "upvote" ? { votes: 1 } : { votes: -1 }
-
         this.props.addUpVote(character, vote)
     }
 
     addComment = (character, event) => {
-
         event.preventDefault()
-
         this.props.addComment(character, { comments: event.target.comment.value })
     }
-
-
 
     render() {
 
