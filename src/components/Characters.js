@@ -6,14 +6,13 @@ import CharacterSave from './CharacterSave'
 
 const Characters = (props) => {
 
-    debugger;
     const characterCards = props.characters.map((character, index) =>
         <div>
             <CharacterCard character={character} key={index} />
             {character.created_at ?
                 (
                     <CharacterForm character={character}
-                        upvote={props.upVote}
+                        upVote={props.upVote}
                         addComment={props.addComment} />
                 ) :
                 <CharacterSave character={character}

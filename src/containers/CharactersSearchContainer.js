@@ -29,7 +29,7 @@ class CharactersSearchContainer extends React.Component {
 
     saveCharacter = (character) => {
 
-        let thumbnail = character.thumbnail.path || character.thumbnail
+        let thumbnail = character.thumbnail.path
 
         let characterData = {
             name: character.name,

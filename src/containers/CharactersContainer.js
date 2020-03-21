@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { fetchCharacters } from '../actions/fetchCharacters'
 import { addComment } from '../actions/addComment'
 import { addUpVote } from '../actions/addUpVote'
-//import { saveCharacter } from '../actions/saveCharacter'
 import Characters from '../components/Characters'
 
 class CharactersContainer extends React.Component {
@@ -14,29 +13,15 @@ class CharactersContainer extends React.Component {
 
     upVote = (character, type) => {
         const vote = type === "upvote" ? { votes: 1 } : { votes: -1 }
-        let characterData = {
-            name: character.name,
-            description: character.description,
-            thumbnail: character.thumbnail.path,
-            image: character.thumbnail.path
-        }
 
-        this.props.addUpVote(characterData, vote)
+        this.props.addUpVote(character, vote)
     }
 
     addComment = (character, event) => {
 
         event.preventDefault()
 
-        let thumbnail = character.thumbnail.path || character.thumbnail
-
-        let characterData = {
-            name: character.name,
-            description: character.description,
-            thumbnail: thumbnail,
-            image: thumbnail
-        }
-        this.props.addComment(characterData, { comments: event.target.comment.value })
+        this.props.addComment(character, { comments: event.target.comment.value })
     }
 
 

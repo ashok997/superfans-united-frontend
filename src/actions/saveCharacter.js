@@ -1,6 +1,5 @@
 export function saveCharacter(character) {
     return (dispatch) => {
-        debugger;
         fetch('http://localhost:3000/api/v1/characters', {
             headers: {
                 'Content-Type': "application/json"
@@ -8,8 +7,11 @@ export function saveCharacter(character) {
             method: 'POST',
             body: JSON.stringify({ character })
         })
-        // .then(respose => respose.json())
-        // .then(character => dispatch({ type: "SAVE_CHARACTER", payload: character }))
+            .then(respose => respose.json())
+            .then(character => dispatch({
+                type: "SAVE_CHARACTER",
+                payload: character
+            }))
     }
 
 }
