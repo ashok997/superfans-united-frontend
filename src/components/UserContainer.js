@@ -7,7 +7,8 @@ import Characters from '../components/Characters'
 class UserContainer extends React.Component {
 
     state = {
-        characters: []
+        characters: [],
+        user: { name: 'Tony', email: "tony@starkindustries" }
     }
 
     componentDidMount() {
@@ -17,26 +18,16 @@ class UserContainer extends React.Component {
             }))
     }
 
-
-
-
-
     render() {
         return (
-            <div>
-                <h4> Welcome User!</h4>
+
+            <div class='container'>
+                <h4> Welcome {this.state.user.name}!</h4>
                 <Characters characters={this.state.characters} />
-            </div>
+            </div >
         )
     }
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         characters: state.characters
-//     }
-// }
-
-// export default connect(mapStateToProps, { fetchUserCharacters })(UserContainer)
 
 export default UserContainer

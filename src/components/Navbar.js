@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
     return (
-        <nav class='container-fluid' >
+        <nav class='container' >
             <div class="row" >
                 <a class='col-md' href="/"> User</a>
                 <a class='col-md' href="/search"> Search Character</a>

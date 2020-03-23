@@ -6,7 +6,7 @@ import CharacterSave from './CharacterSave'
 
 const Characters = (props) => {
 
-    const characterCards = props.characters.map((character, index) =>
+    const characterCards = props.characters.length && props.characters.map((character, index) =>
 
         <div class='container'>
 
@@ -16,7 +16,8 @@ const Characters = (props) => {
                     <CharacterForm character={character}
                         upVote={props.upVote}
                         addComment={props.addComment} />
-                ) :
+                )
+                :
                 <CharacterSave character={character}
                     saveCharacter={props.saveCharacter} />
 
@@ -24,7 +25,9 @@ const Characters = (props) => {
 
         </div>
 
+
     )
+
     return (
         <div>
             {characterCards}

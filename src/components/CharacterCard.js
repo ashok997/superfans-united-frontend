@@ -11,7 +11,7 @@ const CharacterCard = ({ character }) => {
                 <div>
                     {entry.votes ? <p> Votes: {entry.votes}</p> : <p></p>}
                     {entry.comments ? <p> Comments: {entry.comments} </p> : <p></p>}
-                    {entry.user_id ? <p> </p> : <p> By: {entry.user.name}</p>}
+                    {entry.user ? <p> By: {entry.user.name} </p> : <p></p>}
                 </div>
             )}
 
