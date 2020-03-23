@@ -14,6 +14,14 @@ export default function characterReducer(state = { characters: [] }, action) {
                     }
                 })
             }
+        case 'FETCH_USER_CHARACTERS':
+            debugger;
+            return {
+                // ...state, characters: state.characters.filter(character => {
+                //     character.user_character.filter(entry =>
+                //         entry.user_id === 2)
+                // })
+            }
         default:
             return state
     }

@@ -18,7 +18,6 @@ class CharactersSearchContainer extends React.Component {
             .then(rawData => this.setState({
                 results: rawData.data.results
             }))
-
     }
 
     handleChange = (event) => {
@@ -39,6 +38,7 @@ class CharactersSearchContainer extends React.Component {
         }
 
         this.props.saveCharacter(characterData)
+        //this.props.history.push("/characters")
     }
 
     render() {

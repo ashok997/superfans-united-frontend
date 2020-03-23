@@ -21,15 +21,19 @@ class CharactersContainer extends React.Component {
         this.props.addComment(character, { comments: event.target.comment.value })
     }
 
-    render() {
+    renderCharacters = () => {
 
+    }
+
+    render() {
+        let characters = this.props.characters
         return (
-            <div>
-                <Characters characters={this.props.characters}
-                    upVote={this.upVote}
-                    addComment={this.addComment}
-                />
-            </div>
+            characters &&
+            <Characters characters={characters}
+                upVote={this.upVote}
+                addComment={this.addComment}
+            />
+
 
         )
     }

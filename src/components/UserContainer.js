@@ -1,12 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import { fetchUserCharacters } from '../actions/fetchUserCharacters'
+import { fetchCharacters } from '../actions/fetchCharacters'
+import Characters from '../components/Characters'
 
 class UserContainer extends React.Component {
 
-    componentDidMount() {
-        let CharacterId = 1;
-        fetchUserCharacters(CharacterId)
+    state = {
+        characters: []
     }
+
+    componentDidMount() {
+        fetchCharacters()
+    }
+
+    filterCharacter = (characters) => {
+        const result = characters.filter(character =>
+            character.user_characters.filter(entry => entry.user_id === 2))
+
+        return result
+    }
+
 
     render() {
         return (
@@ -16,5 +30,13 @@ class UserContainer extends React.Component {
         )
     }
 }
+
+// const mapStateToProps = state => {
+//     return {
+//         characters: state.characters
+//     }
+// }
+
+// export default connect(mapStateToProps, { fetchUserCharacters })(UserContainer)
 
 export default UserContainer

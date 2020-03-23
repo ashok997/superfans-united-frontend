@@ -7,7 +7,9 @@ import CharacterSave from './CharacterSave'
 const Characters = (props) => {
 
     const characterCards = props.characters.map((character, index) =>
-        <div>
+
+        <div class='container'>
+
             <CharacterCard character={character} key={index} />
             {character.created_at ?
                 (
@@ -19,7 +21,9 @@ const Characters = (props) => {
                     saveCharacter={props.saveCharacter} />
 
             }
+
         </div>
+
     )
     return (
         <div>
