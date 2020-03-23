@@ -38,7 +38,7 @@ class CharactersSearchContainer extends React.Component {
         }
 
         this.props.saveCharacter(characterData)
-        //this.props.history.push("/characters")
+        this.props.history.push("/characters")
     }
 
     render() {

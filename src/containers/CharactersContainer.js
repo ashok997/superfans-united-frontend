@@ -34,7 +34,6 @@ class CharactersContainer extends React.Component {
                 addComment={this.addComment}
             />
 
-
         )
     }
 }

@@ -11,21 +11,21 @@ class UserContainer extends React.Component {
     }
 
     componentDidMount() {
-        fetchCharacters()
+        fetchUserCharacters()
+            .then(data => this.setState({
+                characters: data.characters
+            }))
     }
 
-    filterCharacter = (characters) => {
-        const result = characters.filter(character =>
-            character.user_characters.filter(entry => entry.user_id === 2))
 
-        return result
-    }
+
 
 
     render() {
         return (
             <div>
                 <h4> Welcome User!</h4>
+                <Characters characters={this.state.characters} />
             </div>
         )
     }

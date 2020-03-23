@@ -9,9 +9,9 @@ const CharacterCard = ({ character }) => {
             <br />
             {character.user_characters && character.user_characters.map(entry =>
                 <div>
-                    <p> Votes: {entry.votes}</p>
-                    <p> Comments: {entry.comments} </p>
-                    <p> By: {entry.user.name}</p>
+                    {entry.votes ? <p> Votes: {entry.votes}</p> : <p></p>}
+                    {entry.comments ? <p> Comments: {entry.comments} </p> : <p></p>}
+                    {entry.user_id ? <p> </p> : <p> By: {entry.user.name}</p>}
                 </div>
             )}
 
