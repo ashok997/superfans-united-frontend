@@ -52,4 +52,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { fetchCharacters, addComment, addUpVote })(CharactersContainer)
+export default connect(mapStateToProps, { fetchCharacters, addComment, addUpVote, fetchUserCharacters })(CharactersContainer)

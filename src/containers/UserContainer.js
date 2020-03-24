@@ -1,34 +1,34 @@
-import React from 'react';
-import { connect } from 'react-redux'
-import { fetchUserCharacters } from '../actions/fetchUserCharacters'
-import { fetchCharacters } from '../actions/fetchCharacters'
-import Characters from '../components/Characters'
+// import React from 'react';
 
-class UserContainer extends React.Component {
+// import { fetchUserCharacters } from '../actions/fetchUserCharacters'
 
-    state = {
-        characters: [],
-        user: { name: 'Tony', email: "tony@starkindustries" }
-        //mocking the fetched user
-    }
+// import Characters from '../components/Characters'
 
-    componentDidMount() {
-        fetchUserCharacters()
-            .then(data => this.setState({
-                characters: data.characters
-            }))
-    }
+// class UserContainer extends React.Component {
 
-    render() {
-        return (
+//     state = {
+//         characters: [],
+//         user: { name: 'Tony', email: "tony@starkindustries" }
+//         //mocking the fetched user
+//     }
 
-            <div class='container'>
-                <h4> Welcome {this.state.user.name}!</h4>
-                <Characters characters={this.state.characters} />
-            </div >
-        )
-    }
-}
+//     componentDidMount() {
+//         fetchUserCharacters()
+//             .then(data => this.setState({
+//                 characters: data.characters
+//             }))
+//     }
+
+//     render() {
+//         return (
+
+//             <div class='container'>
+//                 <h4> Welcome {this.state.user.name}!</h4>
+//                 <Characters characters={this.state.characters} />
+//             </div >
+//         )
+//     }
+// }
 
 
-export default UserContainer
+// export default UserContainer
