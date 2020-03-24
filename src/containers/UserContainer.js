@@ -9,6 +9,7 @@ class UserContainer extends React.Component {
     state = {
         characters: [],
         user: { name: 'Tony', email: "tony@starkindustries" }
+        //mocking the fetched user
     }
 
     componentDidMount() {

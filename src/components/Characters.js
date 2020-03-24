@@ -8,7 +8,8 @@ const Characters = (props) => {
 
     const characterCards = props.characters.length && props.characters.map((character, index) =>
 
-        <div class='container'>
+
+        <div>
 
             <CharacterCard character={character} key={index} />
             {character.created_at ?
@@ -22,15 +23,17 @@ const Characters = (props) => {
                     saveCharacter={props.saveCharacter} />
 
             }
-
         </div>
+
 
 
     )
 
     return (
-        <div>
-            {characterCards}
+        <div class='row'>
+            <div class="col-6 col-sm-4">
+                {characterCards}
+            </div>
         </div>
     )
 

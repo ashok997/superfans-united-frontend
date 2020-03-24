@@ -13,6 +13,7 @@ const CharacterForm = ({ character, upVote, addComment }) => {
             <br />
             <form onSubmit={(comment) => addComment(character, comment)}>
                 <input type="text"
+                    class="form-control"
                     name='comment'
                     placeholder='comment'
                 />

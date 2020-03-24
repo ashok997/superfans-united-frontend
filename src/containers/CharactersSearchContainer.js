@@ -44,9 +44,12 @@ class CharactersSearchContainer extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <p>Search Characters :</p>
-                    <label>Names Starting with: </label>
-                    <input type="text" name="nameStartingWith" value={this.state.searchKey} onChange={this.handleChange} />
+                    <input type="text"
+                        name="nameStartingWith"
+                        class="form-control"
+                        placeholder="Names Startin With"
+                        value={this.state.searchKey}
+                        onChange={this.handleChange} />
                     <input type='submit'></input>
                 </form>
                 <Characters characters={this.state.results}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchCharacters } from '../actions/fetchCharacters'
+import { fetchUserCharacters } from '../actions/fetchUserCharacters'
 import { addComment } from '../actions/addComment'
 import { addUpVote } from '../actions/addUpVote'
 import Characters from '../components/Characters'
@@ -8,7 +9,12 @@ import Characters from '../components/Characters'
 class CharactersContainer extends React.Component {
 
     componentDidMount() {
-        this.props.fetchCharacters()
+        if (this.props.location.pathname === "/characters") {
+            this.props.fetchCharacters()
+        }
+        else {
+            this.props.fetchUserCharacters()
+        }
     }
 
     upVote = (character, type) => {
@@ -28,11 +34,13 @@ class CharactersContainer extends React.Component {
     render() {
         let characters = this.props.characters
         return (
-            characters &&
-            <Characters characters={characters}
-                upVote={this.upVote}
-                addComment={this.addComment}
-            />
+            <div class='container'>
+                {characters &&
+                    <Characters characters={characters}
+                        upVote={this.upVote}
+                        addComment={this.addComment}
+                    />}
+            </div>
 
         )
     }
