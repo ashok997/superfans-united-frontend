@@ -3,9 +3,9 @@ import React from 'react'
 const CharacterCard = ({ character }) => {
     return (
         <>
-            <center><h3>{character.name}</h3></center>
+            <center><h4>{character.name}</h4></center>
             <p>{character.description}</p>
-            <p><img src={`${character.thumbnail.path || character.thumbnail}.jpg`} alt="thumbnail" width="250" height="250" /></p>
+            <p><img class="rounded mx-auto d-block" src={`${character.thumbnail.path || character.thumbnail}.jpg`} alt="thumbnail" width="250" height="250" /></p>
             Comments:
             {
                 character.user_characters && character.user_characters.map(entry =>
