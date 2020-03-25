@@ -2,7 +2,7 @@ import React from 'react'
 
 const CharacterCard = ({ character }) => {
     return (
-        <div >
+        <>
             <center><h3>{character.name}</h3></center>
             <p>{character.description}</p>
             <p><img src={`${character.thumbnail.path || character.thumbnail}.jpg`} alt="thumbnail" width="250" height="250" /></p>
@@ -27,7 +27,7 @@ const CharacterCard = ({ character }) => {
                 )
             }
 
-        </div >
+        </>
     )
 
 }

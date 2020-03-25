@@ -42,7 +42,7 @@ class CharactersSearchContainer extends React.Component {
     render() {
 
         return (
-            <div>
+            <div class='container'>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text"
                         name="nameStartingWith"
