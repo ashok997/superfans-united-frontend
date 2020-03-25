@@ -6,18 +6,27 @@ const CharacterCard = ({ character }) => {
             <p>{character.name}</p>
             <p>{character.description}</p>
             <p><img src={`${character.thumbnail.path || character.thumbnail}.jpg`} alt="thumbnail" width="175" height="175" /></p>
-            <br />
-            {character.user_characters && character.user_characters.map(entry =>
-                /*      Comments : {user_characters.map(entry => return all comments)}
-                     Score: <p>{user_characters.reduce(entry => combine values of all votes)}</p> */
-                <div>
-                    {entry.votes ? <p> Votes: {entry.votes}</p> : <p></p>}
-                    {entry.comments ? <p> Comments: {entry.comments} </p> : <p></p>}
-                    {entry.user ? <p> By: {entry.user.name} </p> : <p></p>}
-                </div>
-            )}
+            Comments:
+            {
+                character.user_characters && character.user_characters.map(entry =>
+                    <div>
+                        {entry.comments ? <>{entry.comments}</> : <></>}
+                        {entry.user && entry.comments ? <> By: {entry.user.name}</> : <></>}
+                        {/* this is done to avoid duplicates rendering of user name */}
+                    </div>
+                )
+            }
+            Votes:
+            {
+                character.user_characters && character.user_characters.map(entry =>
+                    <div>
+                        {entry.votes ? <> {entry.votes} </> : <></>}
+                        {entry.user && entry.votes ? <> By: {entry.user.name} </> : <></>}
+                    </div>
+                )
+            }
 
-        </div>
+        </div >
     )
 
 }
