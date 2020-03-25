@@ -3,7 +3,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import CharactersContainer from './containers/CharactersContainer'
 import CharactersSearchContainer from './containers/CharactersSearchContainer'
-import UserContainer from './containers/UserContainer'
 import Navbar from './components/Navbar'
 
 

@@ -3,7 +3,6 @@ import React from 'react'
 const Navbar = () => {
     return (
         <div>
-            <h1> You are logged in as Tony !</h1>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
                     <a class="nav-link " href="/">User</a>
@@ -15,6 +14,7 @@ const Navbar = () => {
                     <a class="nav-link" href="/characters">All Characters</a>
                 </li>
             </ul>
+            <center class="text-primary"> You are logged in as Tony</center>
         </div>
     )
 }

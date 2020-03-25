@@ -4,6 +4,7 @@ const CharacterForm = ({ character, upVote, addComment }) => {
 
     return (
         <div>
+            <br></br>
             <button
                 className="upVote-button"
                 onClick={() => upVote(character, "upvote")}>Upvote</button>
@@ -19,6 +20,7 @@ const CharacterForm = ({ character, upVote, addComment }) => {
                 />
                 <button type='submit' value="Submit">Comment</button>
             </form>
+            <br></br>
         </div>
 
     )
