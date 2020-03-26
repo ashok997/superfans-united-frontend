@@ -5,8 +5,9 @@ import CharacterSave from './CharacterSave'
 
 
 const Characters = (props) => {
-    const characterCards = props.characters.length && props.characters.map((character) =>
+    const characterCards = props.characters.length > 0 && props.characters.map((character) =>
         <div class="col-6 col-sm-4" >
+
             <CharacterCard character={character} key={character.id} />
             {character.created_at ?
                 (
