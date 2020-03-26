@@ -1,35 +1,32 @@
 import React from "react";
+import Form from "react-bootstrap/Form";
+import Card from "react-bootstrap/card";
+import Button from "react-bootstrap/Button";
 
 const CharacterForm = ({ character, upVote, addComment }) => {
   return (
-    <div>
-      <br></br>
-      <button
+    <Card body>
+      <Button
+        variant="outline-info"
         className="upVote-button"
         onClick={() => upVote(character, "upvote")}
       >
         &#128077;
-      </button>
-      <button
-        className="upVote-button"
+      </Button>
+      <Button
+        className="downVote-button"
+        variant="outline-info"
         onClick={() => upVote(character, "downvote")}
       >
         &#128078;
-      </button>
+      </Button>
       <br />
-      <form onSubmit={comment => addComment(character, comment)}>
-        <input
-          type="text"
-          class="form-control"
-          name="comment"
-          placeholder="comment"
-        />
-        <button type="submit" value="Submit">
-          Comment
-        </button>
-      </form>
+      <Form onSubmit={comment => addComment(character, comment)}>
+        <Form.Label> Comment: </Form.Label>
+        <Form.Control type="text" name="comment" placeholder="comment" />
+      </Form>
       <br></br>
-    </div>
+    </Card>
   );
 };
 
