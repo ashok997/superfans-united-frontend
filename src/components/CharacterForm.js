@@ -1,11 +1,11 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
-import Card from "react-bootstrap/card";
 import Button from "react-bootstrap/Button";
 
 const CharacterForm = ({ character, upVote, addComment }) => {
   return (
-    <Card body>
+    <>
+      <br></br>
       <Button
         variant="outline-info"
         className="upVote-button"
@@ -26,7 +26,7 @@ const CharacterForm = ({ character, upVote, addComment }) => {
         <Form.Control type="text" name="comment" placeholder="comment" />
       </Form>
       <br></br>
-    </Card>
+    </>
   );
 };
 

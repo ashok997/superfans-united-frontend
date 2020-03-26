@@ -9,22 +9,24 @@ const Characters = props => {
   const characterCards =
     props.characters.length > 0 &&
     props.characters.map(character => (
-      <Card border="info" style={{ width: "20rem" }}>
-        <CharacterCard character={character} key={character.id} />
-        {character.created_at ? (
-          <CharacterForm
-            character={character}
-            upVote={props.upVote}
-            addComment={props.addComment}
-            key={character.id + "-form"}
-          />
-        ) : (
-          <CharacterSave
-            character={character}
-            saveCharacter={props.saveCharacter}
-            key={character.id + "-save"}
-          />
-        )}
+      <Card border="info" bg="light" style={{ width: "20rem" }}>
+        <Card.Body>
+          <CharacterCard character={character} key={character.id} />
+          {character.created_at ? (
+            <CharacterForm
+              character={character}
+              upVote={props.upVote}
+              addComment={props.addComment}
+              key={character.id + "-form"}
+            />
+          ) : (
+            <CharacterSave
+              character={character}
+              saveCharacter={props.saveCharacter}
+              key={character.id + "-save"}
+            />
+          )}
+        </Card.Body>
       </Card>
     ));
 
