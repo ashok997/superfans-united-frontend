@@ -1,15 +1,14 @@
-import React from 'react'
+import React from "react";
 
 const CharacterSave = ({ character, saveCharacter }) => {
-    return (
+  return (
+    <button
+      className="saveCharacter-button"
+      onClick={() => saveCharacter(character)}
+    >
+      &#10084;
+    </button>
+  );
+};
 
-        <button
-            className="saveCharacter-button"
-            onClick={() => saveCharacter(character)} >
-            Save
-        </button>
-
-    )
-}
-
-export default CharacterSave
+export default CharacterSave;
