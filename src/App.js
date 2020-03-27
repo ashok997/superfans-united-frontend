@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import CharactersContainer from "./containers/CharactersContainer";
 import CharactersSearchContainer from "./containers/CharactersSearchContainer";
 import Navigationbar from "./components/Navigationbar";
+import Footer from "./components/Footer";
 
 class App extends React.Component {
   render() {
@@ -20,6 +21,7 @@ class App extends React.Component {
         <Route exact={true} path="/" component={CharactersContainer} />
         <Route path="/search" component={CharactersSearchContainer} />
         <Route path="/characters" component={CharactersContainer} />
+        <Footer />
         <script
           src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
           integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
