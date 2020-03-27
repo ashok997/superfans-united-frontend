@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/card";
 import Badge from "react-bootstrap/Badge";
+import { getElementError } from "@testing-library/react";
 
 const CharacterCard = ({ character }) => {
   return (
@@ -14,6 +15,7 @@ const CharacterCard = ({ character }) => {
         height="225"
       />
       <Card.Text>{character.description}</Card.Text>
+
       {character.user_characters && <Badge variant="info">Comments</Badge>}
       {character.user_characters &&
         character.user_characters.map(entry => (
@@ -23,14 +25,13 @@ const CharacterCard = ({ character }) => {
           </div>
         ))}
       <br></br>
-      {character.user_characters && <Badge variant="info">Votes</Badge>}
-      {character.user_characters &&
-        character.user_characters.map(entry => (
-          <div>
-            {entry.votes && entry.votes}
-            {entry.user && entry.votes ? <> By: {entry.user.name} </> : <></>}
-          </div>
-        ))}
+      {character.user_characters && <Badge variant="info">Meta Score:</Badge>}
+      <div>
+        {character.user_characters &&
+          character.user_characters
+            .map(entry => entry.votes)
+            .reduce((a, b) => a + b, 0)}
+      </div>
     </>
   );
 };
