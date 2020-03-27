@@ -1,9 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import CharactersContainer from "./containers/CharactersContainer";
 import CharactersSearchContainer from "./containers/CharactersSearchContainer";
-import Navbar from "./components/Navbar";
+import Navigationbar from "./components/Navigationbar";
 
 class App extends React.Component {
   render() {
@@ -16,7 +16,7 @@ class App extends React.Component {
           crossorigin="anonymous"
         ></link>
 
-        <Navbar />
+        <Navigationbar />
         <Route exact={true} path="/" component={CharactersContainer} />
         <Route path="/search" component={CharactersSearchContainer} />
         <Route path="/characters" component={CharactersContainer} />

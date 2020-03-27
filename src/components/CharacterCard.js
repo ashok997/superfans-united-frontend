@@ -1,18 +1,13 @@
 import React from "react";
 import Card from "react-bootstrap/card";
 import Badge from "react-bootstrap/Badge";
-import { getElementError } from "@testing-library/react";
 
 const CharacterCard = ({ character }) => {
   return (
     <>
       <Card.Title>{character.name}</Card.Title>
-      <img
-        class="rounded mx-auto d-block"
+      <Card.Img
         src={`${character.thumbnail.path || character.thumbnail}.jpg`}
-        alt="thumbnail"
-        width="225"
-        height="225"
       />
       <Card.Text>{character.description}</Card.Text>
 
@@ -20,8 +15,8 @@ const CharacterCard = ({ character }) => {
       {character.user_characters &&
         character.user_characters.map(entry => (
           <div>
+            {entry.user && entry.comments ? <>{entry.user.name}: </> : <></>}
             {entry.comments && entry.comments}
-            {entry.user && entry.comments ? <> By: {entry.user.name}</> : <></>}
           </div>
         ))}
       <br></br>
