@@ -11,7 +11,7 @@ const CharacterCard = ({ character }) => {
       />
       <Card.Text>{character.description}</Card.Text>
 
-      {character.user_characters && <Badge variant="info">Comments</Badge>}
+      {character.user_characters && <Badge variant="danger">Comments</Badge>}
       {character.user_characters &&
         character.user_characters.map(entry => (
           <div>
@@ -20,7 +20,7 @@ const CharacterCard = ({ character }) => {
           </div>
         ))}
       <br></br>
-      {character.user_characters && <Badge variant="info">Meta Score:</Badge>}
+      {character.user_characters && <Badge variant="danger">Meta Score:</Badge>}
       <div>
         {character.user_characters &&
           character.user_characters

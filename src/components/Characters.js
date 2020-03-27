@@ -9,7 +9,7 @@ const Characters = props => {
   const characterCards =
     props.characters.length > 0 &&
     props.characters.map(character => (
-      <Card border="info" bg="light" style={{ width: "20rem" }}>
+      <Card border="danger" bg="light" style={{ width: "20rem" }}>
         <Card.Body>
           <CharacterCard character={character} key={character.id} />
           {character.created_at ? (

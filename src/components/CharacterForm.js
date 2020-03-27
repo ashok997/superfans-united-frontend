@@ -7,7 +7,7 @@ const CharacterForm = ({ character, upVote, addComment }) => {
     <>
       <br></br>
       <Button
-        variant="outline-info"
+        variant="outline-danger"
         className="upVote-button"
         onClick={() => upVote(character, "upvote")}
       >
@@ -15,7 +15,7 @@ const CharacterForm = ({ character, upVote, addComment }) => {
       </Button>
       <Button
         className="downVote-button"
-        variant="outline-info"
+        variant="outline-danger"
         onClick={() => upVote(character, "downvote")}
       >
         &#128078;
