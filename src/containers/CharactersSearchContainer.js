@@ -4,11 +4,13 @@ import { connect } from "react-redux";
 import Characters from "../components/Characters";
 import { saveCharacter } from "../actions/saveCharacter";
 import Form from "react-bootstrap/Form";
+import Alert from "react-bootstrap/Alert";
 
 class CharactersSearchContainer extends React.Component {
   state = {
     results: [],
-    searchKey: ""
+    searchKey: "",
+    searchCompleted: false
   };
 
   handleSubmit = event => {
@@ -21,7 +23,8 @@ class CharactersSearchContainer extends React.Component {
 
     this.setState({
       results: [],
-      searchKey: ""
+      searchKey: "",
+      searchCompleted: true
     });
   };
 
@@ -57,13 +60,17 @@ class CharactersSearchContainer extends React.Component {
             onChange={this.handleChange}
           />
         </Form>
-        {this.state.results ? (
+        {this.state.results.length === 0 &&
+        this.state.searchCompleted === true ? (
+          <Alert variant="info">
+            <p> Sorry ! Your search have returned no results !! </p>
+            <p> Please try again !!</p>
+          </Alert>
+        ) : (
           <Characters
             characters={this.state.results}
             saveCharacter={this.saveCharacter}
           />
-        ) : (
-          <p> No character found starting with that name</p>
         )}
       </div>
     );
