@@ -18,6 +18,11 @@ class CharactersSearchContainer extends React.Component {
         results: rawData.data.results
       })
     );
+
+    this.setState({
+      results: [],
+      searchKey: ""
+    });
   };
 
   handleChange = event => {
@@ -52,10 +57,14 @@ class CharactersSearchContainer extends React.Component {
             onChange={this.handleChange}
           />
         </Form>
-        <Characters
-          characters={this.state.results}
-          saveCharacter={this.saveCharacter}
-        />
+        {this.state.results ? (
+          <Characters
+            characters={this.state.results}
+            saveCharacter={this.saveCharacter}
+          />
+        ) : (
+          <p> No character found starting with that name</p>
+        )}
       </div>
     );
   }

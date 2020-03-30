@@ -20,10 +20,9 @@ class CharactersContainer extends React.Component {
     this.props.addCommentOrVote(character, vote);
   };
 
-  addComment = (character, event) => {
-    event.preventDefault();
+  addComment = (character, comment) => {
     this.props.addCommentOrVote(character, {
-      comments: event.target.comment.value
+      comments: comment
     });
   };
 
