@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Characters from "../components/Characters";
 import { saveCharacter } from "../actions/saveCharacter";
 import Form from "react-bootstrap/Form";
-import Alert from "react-bootstrap/Alert";
+import NoResult from "../components/NoResult";
 
 class CharactersSearchContainer extends React.Component {
   state = {
@@ -62,10 +62,7 @@ class CharactersSearchContainer extends React.Component {
         </Form>
         {this.state.results.length === 0 &&
         this.state.searchCompleted === true ? (
-          <Alert variant="info">
-            <p> Sorry ! Your search have returned no results !! </p>
-            <p> Please try again !!</p>
-          </Alert>
+          <NoResult />
         ) : (
           <Characters
             characters={this.state.results}
