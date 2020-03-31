@@ -15,7 +15,7 @@ const Characters = props => {
           {character.created_at ? (
             <CharacterForm
               character={character}
-              upVote={props.upVote}
+              handleVote={props.handleVote}
               addComment={props.addComment}
               key={character.id + "-form"}
             />

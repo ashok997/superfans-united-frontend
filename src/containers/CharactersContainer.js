@@ -15,7 +15,7 @@ class CharactersContainer extends React.Component {
     }
   }
 
-  upVote = (character, type) => {
+  handleVote = (character, type) => {
     const vote = type === "upvote" ? { votes: 1 } : { votes: -1 };
     this.props.addCommentOrVote(character, vote);
   };
@@ -33,7 +33,7 @@ class CharactersContainer extends React.Component {
         {characters && (
           <Characters
             characters={characters}
-            upVote={this.upVote}
+            handleVote={this.handleVote}
             addComment={this.addComment}
           />
         )}

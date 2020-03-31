@@ -22,21 +22,21 @@ class CharacterForm extends React.Component {
   };
 
   render() {
-    const { character, upVote, addComment } = this.props;
+    const { character, handleVote } = this.props;
     return (
       <>
         <br></br>
         <Button
           variant="outline-danger"
           className="upVote-button"
-          onClick={() => upVote(character, "upvote")}
+          onClick={() => handleVote(character, "upvote")}
         >
           &#128077;
         </Button>
         <Button
           className="downVote-button"
           variant="outline-danger"
-          onClick={() => upVote(character, "downvote")}
+          onClick={() => handleVote(character, "downvote")}
         >
           &#128078;
         </Button>
