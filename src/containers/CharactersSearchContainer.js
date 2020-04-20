@@ -15,6 +15,7 @@ class CharactersSearchContainer extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+
     fetchCharactersFromApi(this.state.searchKey).then(rawData =>
       this.setState({
         results: rawData.data.results
@@ -35,12 +36,11 @@ class CharactersSearchContainer extends React.Component {
   };
 
   saveCharacter = character => {
-    let thumbnail = character.thumbnail.path;
     let characterData = {
       name: character.name,
       description: character.description,
-      thumbnail: thumbnail,
-      image: thumbnail
+      thumbnail: character.thumbnail.path,
+      image: character.thumbnail.path
     };
 
     this.props.saveCharacter(characterData);

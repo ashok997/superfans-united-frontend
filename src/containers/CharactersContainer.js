@@ -22,7 +22,7 @@ class CharactersContainer extends React.Component {
 
   addComment = (character, comment) => {
     this.props.addCommentOrVote(character, {
-      comments: comment
+      comments: comment,
     });
   };
 
@@ -42,14 +42,14 @@ class CharactersContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    characters: state.characters
+    characters: state.characters,
   };
 };
 
 export default connect(mapStateToProps, {
   fetchCharacters,
   addCommentOrVote,
-  fetchUserCharacters
+  fetchUserCharacters,
 })(CharactersContainer);

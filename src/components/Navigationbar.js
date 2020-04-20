@@ -20,7 +20,7 @@ const Navigationbar = () => {
       </Navbar>
       <Alert variant="info">
         <center>
-          <h3>You are Logged In as Tony</h3>
+          <h3>You are Logged In as Tony Stark</h3>
         </center>
       </Alert>
     </>
