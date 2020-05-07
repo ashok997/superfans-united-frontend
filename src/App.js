@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import CharactersContainer from "./containers/CharactersContainer";
 import CharactersSearchContainer from "./containers/CharactersSearchContainer";
+import UserContainer from "./containers/UserContainer";
 import Navigationbar from "./components/Navigationbar";
 import Footer from "./components/Footer";
 
@@ -21,6 +22,7 @@ class App extends React.Component {
         <Route exact={true} path="/" component={CharactersContainer} />
         <Route path="/search" component={CharactersSearchContainer} />
         <Route path="/characters" component={CharactersContainer} />
+        <Route path="/login" component={UserContainer} />
         <Footer />
         <script
           src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

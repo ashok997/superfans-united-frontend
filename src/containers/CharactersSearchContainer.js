@@ -10,37 +10,37 @@ class CharactersSearchContainer extends React.Component {
   state = {
     results: [],
     searchKey: "",
-    searchCompleted: false
+    searchCompleted: false,
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
 
-    fetchCharactersFromApi(this.state.searchKey).then(rawData =>
+    fetchCharactersFromApi(this.state.searchKey).then((rawData) =>
       this.setState({
-        results: rawData.data.results
+        results: rawData.data.results,
       })
     );
 
     this.setState({
       results: [],
       searchKey: "",
-      searchCompleted: true
+      searchCompleted: true,
     });
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({
-      searchKey: event.target.value
+      searchKey: event.target.value,
     });
   };
 
-  saveCharacter = character => {
+  saveCharacter = (character) => {
     let characterData = {
       name: character.name,
       description: character.description,
       thumbnail: character.thumbnail.path,
-      image: character.thumbnail.path
+      image: character.thumbnail.path,
     };
 
     this.props.saveCharacter(characterData);
