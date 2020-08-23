@@ -1,6 +1,6 @@
 export function addCommentOrVote(character, details) {
   return dispatch => {
-    fetch("http://localhost:3000/api/v1/user_characters", {
+    fetch("http://localhost:3001/api/v1/user_characters", {
       headers: {
         "Content-Type": "application/json"
       },

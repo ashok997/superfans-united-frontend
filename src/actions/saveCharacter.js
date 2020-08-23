@@ -1,6 +1,6 @@
 export function saveCharacter(character) {
     return (dispatch) => {
-        fetch('http://localhost:3000/api/v1/characters', {
+        fetch('http://localhost:3001/api/v1/characters', {
             headers: {
                 'Content-Type': "application/json"
             },
