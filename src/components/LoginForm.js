@@ -1,6 +1,8 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { login } from "../actions/currentUser";
+import { connect } from "react-redux";
 
 class LoginForm extends React.Component {
   state = {
@@ -16,6 +18,8 @@ class LoginForm extends React.Component {
 
   onSubmit = (event) => {
     event.preventDefault();
+    login(this.state);
+
     this.setState({
       username: "",
       password: "",
@@ -24,7 +28,7 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <Form>
+      <Form onSubmit={this.onSubmit}>
         <Form.Label> Username: </Form.Label>
         <Form.Control
           type="text"
@@ -49,4 +53,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default connect(null, { login })(LoginForm);
