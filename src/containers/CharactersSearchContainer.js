@@ -10,7 +10,7 @@ class CharactersSearchContainer extends React.Component {
   state = {
     results: [],
     searchKey: "",
-    searchCompleted: false,
+    searchcompleted: false,
   };
 
   handleSubmit = (event) => {
@@ -19,14 +19,9 @@ class CharactersSearchContainer extends React.Component {
     fetchCharactersFromApi(this.state.searchKey).then((rawData) =>
       this.setState({
         results: rawData.data.results,
+        searchcompleted: true,
       })
     );
-
-    this.setState({
-      results: [],
-      searchKey: "",
-      searchCompleted: true,
-    });
   };
 
   handleChange = (event) => {
@@ -60,8 +55,9 @@ class CharactersSearchContainer extends React.Component {
             onChange={this.handleChange}
           />
         </Form>
+
         {this.state.results.length === 0 &&
-        this.state.searchCompleted === true ? (
+        this.state.searchcompleted === true ? (
           <NoResult />
         ) : (
           <Characters

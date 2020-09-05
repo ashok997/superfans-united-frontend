@@ -4,20 +4,20 @@ import Button from "react-bootstrap/Button";
 
 class CharacterForm extends React.Component {
   state = {
-    comment: ""
+    comment: "",
   };
 
-  onChange = event => {
+  onChange = (event) => {
     this.setState({
-      comment: event.target.value
+      comment: event.target.value,
     });
   };
 
-  onSubmit = event => {
+  onSubmit = (event) => {
     event.preventDefault();
     this.props.addComment(this.props.character, this.state.comment);
     this.setState({
-      comment: ""
+      comment: "",
     });
   };
 
@@ -31,14 +31,14 @@ class CharacterForm extends React.Component {
           className="upVote-button"
           onClick={() => handleVote(character, "upvote")}
         >
-          &#128077;
+          <span>&#128077; </span>
         </Button>
         <Button
           className="downVote-button"
           variant="outline-danger"
           onClick={() => handleVote(character, "downvote")}
         >
-          &#128078;
+          <span> &#128078;</span>
         </Button>
         <br />
         <Form onSubmit={this.onSubmit}>

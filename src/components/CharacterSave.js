@@ -8,7 +8,7 @@ const CharacterSave = ({ character, saveCharacter }) => {
         className="saveCharacter-button"
         onClick={() => saveCharacter(character)}
       >
-        &#10084;
+        <span>&#10084;</span>
       </button>
     </Card>
   );
