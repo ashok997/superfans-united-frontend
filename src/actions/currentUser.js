@@ -8,6 +8,7 @@ export function setCurrentUser(user) {
 export function login(credentials) {
   return (dispatch) => {
     fetch("http://localhost:3001/api/v1/login", {
+      credetntials: "include",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,6 +29,7 @@ export function login(credentials) {
 export function getCurrentUser() {
   return (dispatch) => {
     fetch("http://localhost:3001/api/v1/get_current_user", {
+      credetntials: "include",
       method: "GET",
       headers: {
         "Content-Type": "application/json",
