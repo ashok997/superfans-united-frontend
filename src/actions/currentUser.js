@@ -22,7 +22,8 @@ export function login(credentials) {
         } else {
           dispatch(setCurrentUser(user));
         }
-      });
+      })
+      .catch(console.log);
   };
 }
 
@@ -42,6 +43,7 @@ export function getCurrentUser() {
         } else {
           dispatch(setCurrentUser(user));
         }
-      });
+      })
+      .catch(console.log);
   };
 }

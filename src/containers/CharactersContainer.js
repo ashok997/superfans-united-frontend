@@ -3,14 +3,17 @@ import { connect } from "react-redux";
 import { fetchCharacters } from "../actions/fetchCharacters";
 import { fetchUserCharacters } from "../actions/fetchUserCharacters";
 import { addCommentOrVote } from "../actions/addCommentOrVote";
+import { getCurrentUser } from "../actions/currentUser";
 
 import Characters from "../components/Characters";
 
 class CharactersContainer extends React.Component {
   componentDidMount() {
     if (this.props.location.pathname === "/characters") {
+      this.getCurrentUser();
       this.props.fetchCharacters();
     } else {
+      this.props.getCurrentUser();
       this.props.fetchUserCharacters();
     }
   }
@@ -29,7 +32,7 @@ class CharactersContainer extends React.Component {
   render() {
     let characters = this.props.characters;
     return (
-      <div class="container">
+      <div class="character-container">
         {characters && (
           <Characters
             characters={characters}
@@ -44,7 +47,7 @@ class CharactersContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    characters: state.characters,
+    characters: state.characterReducer.characters,
   };
 };
 
@@ -52,4 +55,5 @@ export default connect(mapStateToProps, {
   fetchCharacters,
   addCommentOrVote,
   fetchUserCharacters,
+  getCurrentUser,
 })(CharactersContainer);

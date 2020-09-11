@@ -7,13 +7,13 @@ export default function characterReducer(state = { characters: [] }, action) {
     case "ADD_COMMENT_OR_VOTE":
       return {
         ...state,
-        characters: state.characters.map(character => {
+        characters: state.characters.map((character) => {
           if (character.id === action.payload.id) {
             return action.payload;
           } else {
             return character;
           }
-        })
+        }),
       };
     default:
       return state;

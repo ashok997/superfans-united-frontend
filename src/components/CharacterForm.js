@@ -31,14 +31,14 @@ class CharacterForm extends React.Component {
           className="upVote-button"
           onClick={() => handleVote(character, "upvote")}
         >
-          <span>&#128077; </span>
+          <span>&#128077;</span>
         </Button>
         <Button
           className="downVote-button"
           variant="outline-danger"
           onClick={() => handleVote(character, "downvote")}
         >
-          <span> &#128078;</span>
+          <span>&#128078;</span>
         </Button>
         <br />
         <Form onSubmit={this.onSubmit}>

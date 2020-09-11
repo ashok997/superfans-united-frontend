@@ -13,9 +13,13 @@ const CharacterCard = ({ character }) => {
 
       {character.user_characters && <Badge variant="danger">Comments</Badge>}
       {character.user_characters &&
-        character.user_characters.map(entry => (
+        character.user_characters.map((entry) => (
           <div>
-            {entry.user && entry.comments ? <>{entry.user.name}: </> : <></>}
+            {entry.user && entry.comments ? (
+              <>{entry.user.username}: </>
+            ) : (
+              <></>
+            )}
             {entry.comments && entry.comments}
           </div>
         ))}
@@ -24,7 +28,7 @@ const CharacterCard = ({ character }) => {
       <div>
         {character.user_characters &&
           character.user_characters
-            .map(entry => entry.votes)
+            .map((entry) => entry.votes)
             .reduce((a, b) => a + b, 0)}
       </div>
     </>
