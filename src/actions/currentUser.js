@@ -4,7 +4,11 @@ export function setCurrentUser(user) {
     user,
   };
 }
-
+export function clearCurrentUser() {
+  return {
+    type: "CLEAR_CURRENT_USER",
+  };
+}
 export function login(credentials) {
   return (dispatch) => {
     fetch("http://localhost:3001/api/v1/login", {
@@ -24,6 +28,15 @@ export function login(credentials) {
         }
       })
       .catch(console.log);
+  };
+}
+
+export function logout() {
+  return (dispatch) => {
+    return fetch("http://localhost:3001/api/v1/logout", {
+      credetntials: "include",
+      method: "DELETE",
+    }).then(dispatch(clearCurrentUser()));
   };
 }
 
