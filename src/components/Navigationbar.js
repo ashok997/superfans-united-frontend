@@ -1,16 +1,24 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { connect } from "react-redux";
 import Navbar from "react-bootstrap/Navbar";
 import Alert from "react-bootstrap/Alert";
 import { Nav } from "react-bootstrap";
 
-const Navigationbar = () => {
+const Navigationbar = ({ currentUser }) => {
   return (
     <>
       <Navbar bg="dark" className="justify-content-end">
-        <Nav.Link>
-          <Link to="/">My Characters</Link>
-        </Nav.Link>
+        {currentUser ? (
+          <Nav.Link>
+            <Link to="/">My Characters</Link>
+          </Nav.Link>
+        ) : (
+          <Nav.Link>
+            <Link to="/login">Login</Link>
+          </Nav.Link>
+        )}
+
         <Nav.Link>
           <Link to="/search">Search Characters</Link>
         </Nav.Link>
@@ -20,11 +28,24 @@ const Navigationbar = () => {
       </Navbar>
       <Alert variant="info">
         <center>
-          <h3>You are Logged In as Tony Stark</h3>
+          {currentUser ? (
+            <p>
+              Welcome to Superfans United. You are logged in as "
+              {currentUser.username}"
+            </p>
+          ) : (
+            ""
+          )}
         </center>
       </Alert>
     </>
   );
 };
 
-export default Navigationbar;
+const mapStateToProps = ({ currentUser }) => {
+  return {
+    currentUser,
+  };
+};
+
+export default connect(mapStateToProps)(Navigationbar);
