@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Navbar from "react-bootstrap/Navbar";
 import Alert from "react-bootstrap/Alert";
 import { Nav } from "react-bootstrap";
+import Logout from "./Logout";
 
 const Navigationbar = ({ currentUser }) => {
   return (
@@ -34,8 +35,9 @@ const Navigationbar = ({ currentUser }) => {
               {currentUser.username}"
             </p>
           ) : (
-            ""
+            <p>Welcome to Superfans United. </p>
           )}
+          {currentUser ? <Logout /> : ""}
         </center>
       </Alert>
     </>
