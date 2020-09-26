@@ -19,6 +19,7 @@ class LoginForm extends React.Component {
   onSubmit = (event) => {
     event.preventDefault();
     this.props.login(this.state);
+    this.props.history.push("/");
 
     this.setState({
       username: "",
