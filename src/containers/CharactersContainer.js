@@ -10,7 +10,6 @@ import Characters from "../components/Characters";
 class CharactersContainer extends React.Component {
   componentDidMount() {
     if (this.props.location.pathname === "/characters") {
-      this.getCurrentUser();
       this.props.fetchCharacters();
     } else {
       this.props.getCurrentUser();
