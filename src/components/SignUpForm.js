@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { signup } from "../actions/currentUser";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-export default class SignUpForm extends Component {
+class SignUpForm extends Component {
   state = {
     username: "",
     password: "",
@@ -19,7 +20,7 @@ export default class SignUpForm extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     this.props.signup(this.state);
-    this.props.history.push("/");
+    //this.props.history.push("/");
 
     this.setState({
       username: "",
@@ -62,3 +63,5 @@ export default class SignUpForm extends Component {
     );
   }
 }
+
+export default connect(null, { signup })(SignUpForm);
