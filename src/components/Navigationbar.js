@@ -15,9 +15,14 @@ const Navigationbar = ({ currentUser }) => {
             <Link to="/">My Characters</Link>
           </Nav.Link>
         ) : (
-          <Nav.Link>
-            <Link to="/login">Login</Link>
-          </Nav.Link>
+          <>
+            <Nav.Link>
+              <Link to="/login">Login</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/signup">Sign Up</Link>
+            </Nav.Link>
+          </>
         )}
 
         <Nav.Link>
@@ -35,7 +40,10 @@ const Navigationbar = ({ currentUser }) => {
               {currentUser.username}"
             </p>
           ) : (
-            <p>Welcome to Superfans United. </p>
+            <>
+              <p>Welcome to Superfans United. </p>
+              <p> Please Login or Sign up to continue </p>
+            </>
           )}
           {currentUser ? <Logout /> : ""}
         </center>
