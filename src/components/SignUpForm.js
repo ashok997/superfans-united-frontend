@@ -20,7 +20,7 @@ class SignUpForm extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     this.props.signup(this.state);
-    //this.props.history.push("/");
+    this.props.history.push("/characters");
 
     this.setState({
       username: "",
